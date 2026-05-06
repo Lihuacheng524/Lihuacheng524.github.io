@@ -7,8 +7,8 @@ menu:
 
 # Profile settings (shown on homepage hero)
 avatar: /images/th.jpg
-greeting: Hi, I'm
-subtitle: 热衷于技术探索与生活记录
+greeting: Hi, I'm Lihuacheng
+subtitle: Ambitious and Liberated
 
 # Social links
 social:
@@ -18,9 +18,9 @@ social:
 
 # Skills to display on homepage
 skills:
-  - name: Web Development
+  - name: 吃饭
     level: 80
-  - name: Backend
+  - name: 睡觉
     level: 70
   - name: DevOps
     level: 60
