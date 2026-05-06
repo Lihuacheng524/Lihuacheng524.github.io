@@ -1,0 +1,17 @@
+<header class="header">
+  <div class="container header-inner">
+    <a href="<%- url_for('/') %>" class="logo"><%= config.title %></a>
+    <nav class="nav">
+      <button class="nav-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-list">
+        <% for (var i in theme.menu) { %>
+          <li><a class="nav-link<%= page.path === theme.menu[i].replace(/^\//, '') || (page.path === '' && theme.menu[i] === '/') ? ' active' : '' %>" href="<%- url_for(theme.menu[i]) %>"><%= i %></a></li>
+        <% } %>
+      </ul>
+    </nav>
+  </div>
+</header>

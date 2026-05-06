@@ -1,0 +1,15 @@
+<section class="tag-page">
+  <div class="container">
+    <h1 class="page-title">标签：<%= page.tag %></h1>
+    <% if (page.posts && page.posts.length) { %>
+      <% page.posts.each(function(post) { %>
+        <article class="archive-post">
+          <time datetime="<%= date_xml(post.date) %>" class="archive-date"><%= date(post.date, 'YYYY-MM-DD') %></time>
+          <h3 class="archive-title">
+            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+          </h3>
+        </article>
+      <% }) %>
+    <% } %>
+  </div>
+</section>

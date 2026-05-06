@@ -1,0 +1,50 @@
+# Navigation menu
+menu:
+  Home: /
+  Blog: /archives/
+  Goals: /goals/
+  About: /about/
+
+# Profile settings (shown on homepage hero)
+avatar: /images/th.jpg
+greeting: Hi, I'm
+subtitle: 热衷于技术探索与生活记录
+
+# Social links
+social:
+  GitHub: https://github.com/Lihuacheng524
+  # Twitter: https://twitter.com/your_twitter
+  # LinkedIn: https://linkedin.com/in/your_linkedin
+
+# Skills to display on homepage
+skills:
+  - name: Web Development
+    level: 80
+  - name: Backend
+    level: 70
+  - name: DevOps
+    level: 60
+
+# Featured projects to display on homepage
+projects:
+  - name: My Blog
+    description: 基于Hexo的个人博客
+    url: https://github.com/Lihuacheng524/Lihuacheng524.github.io
+
+# Footer
+copyright: © 2026 Lihuacheng. All rights reserved.
+
+# Comment system (optional)
+# valine:
+#   enable: false
+#   appId:
+#   appKey:
+
+# Google Analytics
+google_analytics:
+
+# RSS
+rss: /atom.xml
+
+# Favicon
+favicon: /images/th.jpg

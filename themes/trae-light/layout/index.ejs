@@ -1,0 +1,100 @@
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-avatar">
+        <img src="<%- url_for(theme.avatar || '/images/avatar.jpg') %>" alt="<%= config.author %>">
+      </div>
+      <h1 class="hero-greeting"><%= theme.greeting || 'Hi, I\'m' %></h1>
+      <h2 class="hero-name"><%= config.author %></h2>
+      <p class="hero-subtitle"><%= theme.subtitle || config.subtitle %></p>
+      <div class="hero-social">
+        <% if (theme.social) { %>
+          <% for (var i in theme.social) { %>
+            <a href="<%= theme.social[i] %>" target="_blank" rel="noopener" class="social-link"><%= i %></a>
+          <% } %>
+        <% } %>
+      </div>
+      <a href="<%- url_for('/about/') %>" class="btn btn-primary">了解更多 →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section featured-posts">
+  <div class="container">
+    <h2 class="section-title">最新文章</h2>
+    <div class="posts-grid">
+      <% if (page.posts && page.posts.length) { %>
+        <% page.posts.each(function(post) { %>
+          <article class="post-card">
+            <div class="post-card-body">
+              <div class="post-meta">
+                <time datetime="<%= date_xml(post.date) %>"><%= date(post.date, 'YYYY-MM-DD') %></time>
+                <% if (post.tags && post.tags.length) { %>
+                  <span class="post-tags">
+                    <% post.tags.each(function(tag) { %>
+                      <a href="<%- url_for(tag.path) %>" class="tag">#<%= tag.name %></a>
+                    <% }) %>
+                  </span>
+                <% } %>
+              </div>
+              <h3 class="post-title">
+                <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+              </h3>
+              <% if (post.excerpt) { %>
+                <p class="post-excerpt"><%= strip_html(post.excerpt).substring(0, 200) %></p>
+              <% } else if (post.description) { %>
+                <p class="post-excerpt"><%= post.description.substring(0, 200) %></p>
+              <% } %>
+              <a href="<%- url_for(post.path) %>" class="read-more">阅读全文 →</a>
+            </div>
+          </article>
+        <% }) %>
+      <% } else { %>
+        <p class="empty-state">还没有文章，敬请期待</p>
+      <% } %>
+    </div>
+    <% if (page.posts && page.posts.length > 0) { %>
+      <div class="section-footer">
+        <a href="<%- url_for('/archives/') %>" class="btn btn-outline">查看全部文章 →</a>
+      </div>
+    <% } %>
+  </div>
+</section>
+
+<section class="section skills-section">
+  <div class="container">
+    <h2 class="section-title">技能</h2>
+    <div class="skills-grid">
+      <% if (theme.skills) { %>
+        <% theme.skills.forEach(function(skill) { %>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name"><%= skill.name %></span>
+              <span class="skill-level"><%= skill.level %>%</span>
+            </div>
+            <div class="skill-bar">
+              <div class="skill-bar-fill" style="width: <%= skill.level %>%"></div>
+            </div>
+          </div>
+        <% }) %>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<section class="section projects-section">
+  <div class="container">
+    <h2 class="section-title">项目</h2>
+    <div class="projects-grid">
+      <% if (theme.projects) { %>
+        <% theme.projects.forEach(function(project) { %>
+          <div class="project-card">
+            <h3 class="project-name"><%= project.name %></h3>
+            <p class="project-desc"><%= project.description %></p>
+            <a href="<%= project.url %>" target="_blank" rel="noopener" class="project-link">查看项目 →</a>
+          </div>
+        <% }) %>
+      <% } %>
+    </div>
+  </div>
+</section>

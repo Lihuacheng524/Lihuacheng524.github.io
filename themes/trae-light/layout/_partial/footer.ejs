@@ -1,0 +1,17 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-info">
+        <p><%= theme.copyright || '© ' + new Date().getFullYear() + ' ' + config.author %></p>
+        <p>Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></p>
+      </div>
+      <% if (theme.social) { %>
+        <div class="footer-social">
+          <% for (var i in theme.social) { %>
+            <a href="<%= theme.social[i] %>" target="_blank" rel="noopener" class="social-link"><%= i %></a>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</footer>
