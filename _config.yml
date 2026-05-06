@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://lihuacheng524.github.io
+url: https://github.com/Lihuacheng524/Lihuacheng524.github.io.git
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -90,6 +90,7 @@ pagination_dir: page
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:
+  - .nojekyll
 exclude:
 ignore:
 
@@ -100,6 +101,7 @@ theme: trae-light
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
+# GitHub Actions 负责自动构建部署，此配置仅用于本地预览
 deploy:
   type: 'git'
   repository: https://github.com/Lihuacheng524/Lihuacheng524.github.io.git
