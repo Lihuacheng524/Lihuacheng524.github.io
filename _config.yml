@@ -101,8 +101,8 @@ theme: trae-light
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-# GitHub Actions 负责自动构建部署，此配置仅用于本地预览
+# GitHub Actions 自动部署到 gh-pages 分支，此配置用于本地手动部署
 deploy:
   type: 'git'
   repository: https://github.com/Lihuacheng524/Lihuacheng524.github.io.git
-  branch: main
+  branch: gh-pages
